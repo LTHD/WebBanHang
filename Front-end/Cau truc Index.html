@@ -7,7 +7,8 @@
         
         <!-- INCLUDE --> 
         <link href="css/bootstrap.min.css" rel="stylesheet">
-    	<link rel="stylesheet" type="text/css" href="css/mHeader.css">		
+    	<link rel="stylesheet" type="text/css" href="css/mHeader.css">	
+		<link rel="stylesheet" type="text/css" href="css/mContent.css">		
         <title>World of discs</title>
     </head>
     
@@ -116,7 +117,19 @@
 				
 				<!-- SLIDES | END -->
 				<!-- NAVIGATION & SEARCH -->
-				<div id="mNav_Search"></div>
+				<div id="mNav_Search">
+				<div id="mNav"> <span class="glyphicon glyphicon-record"></span> Navigation: <span style="color: #906">Trang chủ</span> </div>
+				<!-- InstanceEndEditable -->
+				  <div id="mSearch">
+							<div class="form-group">
+								<input type="text" placeholder="Nhập từ khóa tìm kiếm..." class="form-control" id="txtSearch">
+								<a href="#" id="btnSearch" class="btn btn-info btn-lg">
+									<span class="glyphicon glyphicon-search"></span> Tìm kiếm 
+								</a>
+							</div>
+						</div>					
+					</div>
+				</div>
 				<!-- NAVIGATION & SEARCH | END -->
 			</div>
 			<!-- HEADER | END-->
@@ -124,7 +137,108 @@
 			<!-- CONTENT -->
 			<div id="mContent">
 				<!-- LEFT CONTETN -->
-				<div id="mLeft_content"></div>
+				<div id="mLeft_content">
+				<div id="mLeft_content">
+					<!-- FILM MENU -->
+					<ul class="nav nav-pills nav-stacked">
+                        <li id="diskfilm" class="active"><a>Đĩa phim</a></li>
+                        <li class="dropdown">
+                          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Phim lẻ <span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                            <li><a href="list-product.html">Hành động</a></li>
+                            <li><a href="list-product.html">Kiếm hiệp</a></li>
+                            <li><a href="list-product.html">Hình sự</a></li>  
+                            <li><a href="list-product.html">Tình cảm</a></li>
+                            <li><a href="list-product.html">Hài</a></li>     
+                            <li><a href="list-product.html">Ma - kinh dị</a></li>                   
+                          </ul>
+                        </li>
+                        <li class="dropdown">
+                          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Phim bộ <span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                            <li><a href="list-product.html">Ấn Độ</a></li>
+                            <li><a href="list-product.html">Hồng Kông</a></li>
+                            <li><a href="list-product.html">Trung Quốc</a></li>  
+                            <li><a href="list-product.html">Âu - Mỹ</a></li>
+                            <li><a href="list-product.html">Hàn Quốc</a></li>     
+                            <li><a href="list-product.html">Nhật Bản</a></li>  
+                            <li><a href="list-product.html">Việt Nam</a></li>  
+                            <li><a href="list-product.html">Châu Á khác</a></li>                 
+                          </ul>
+                        </li>
+                      </ul>
+					<!-- MUSIC MENU -->
+					<ul class="nav nav-pills nav-stacked">
+                        <li id="diskmusic" class="active"><a>Đĩa nhạc</a></li>
+                        <li class="dropdown">
+                          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Việt Nam <span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                            <li><a href="list-product.html">Nhạc trẻ</a></li>  
+                            <li><a href="list-product.html">Nhạc trữ tình</a></li> 
+                            <li><a href="list-product.html">Rock Việt</a></li>  
+                            <li><a href="list-product.html">Rap/HipHop Việt</a></li>    
+                            <li><a href="list-product.html">Nhạc Trịnh</a></li>
+                            <li><a href="list-product.html">Nhạc Thiếu Nhi</a></li>
+                            <li><a href="list-product.html">Dance Việt</a></li>             
+                          </ul>
+                        </li>
+                        <li class="dropdown">
+                          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Âu Mỹ <span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                            <li><a href="list-product.html">Pop</a></li> 
+                            <li><a href="list-product.html">Rock</a></li>
+                            <li><a href="list-product.html">Rap/HipHop</a></li>   
+                            <li><a href="list-product.html">Country</a></li>    
+                            <li><a href="list-product.html">Electronic/Dance</a></li> 
+                            <li><a href="list-product.html">R&B/Soul</a></li> 
+                            <li><a href="list-product.html">Audiophile</a></li>         
+                          </ul>
+                        </li>
+                        <li class="dropdown">
+                          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Châu Á <span class="caret"></span></a>
+                          <ul class="dropdown-menu">           
+                            <li><a href="list-product.html">Hàn Quốc</a></li>
+                            <li><a href="list-product.html">Nhật Bản</a></li>
+                            <li><a href="list-product.html">Hoa Ngữ</a></li>
+                            <li><a href="list-product.html">Thái Lan</a></li>                
+                          </ul>
+                        </li>
+                        <li class="dropdown">
+                          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Hòa tấu <span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                            <li><a href="list-product.html">Classical</a></li> 
+                            <li><a href="list-product.html">Piano</a></li>
+                            <li><a href="list-product.html">Guitar</a></li>
+                            <li><a href="list-product.html">Violin</a></li>
+                            <li><a href="list-product.html">Cello</a></li>
+                            <li><a href="list-product.html">Saxophone</a></li>
+                            <li><a href="list-product.html">Nhạc Cụ Dân Tộc</a></li>               
+                          </ul>
+                        </li>
+                      </ul>
+					<!-- GAME MENU -->
+					<ul class="nav nav-pills nav-stacked">
+                        <li id="diskDVD" class="active"><a>Đĩa DVD</a></li>
+                        <li class="dropdown">
+                          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Đĩa game <span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                            <li><a href="list-product.html">Hành động</a></li>  
+                            <li><a href="list-product.html">Nhập vai</a></li> 
+                            <li><a href="list-product.html">Chiến thuật</a></li>  
+                            <li><a href="list-product.html">Thể thao</a></li>    
+                            <li><a href="list-product.html">Đua xe</a></li>          
+                          </ul>
+                        </li>
+                        <li class="dropdown">
+                          <a class="dropdown-toggle" data-toggle="dropdown" href="#">Đĩa phần mềm <span class="caret"></span></a>
+                          <ul class="dropdown-menu">
+                            <li><a href="list-product.html">Windows</a></li> 
+                            <li><a href="list-product.html">Mac OS</a></li>
+                            <li><a href="list-product.html">Linus</a></li>           
+                          </ul>
+                        </li>
+                      </ul>
+				</div>
 				<!-- LEFT CONTETN | END -->
 				<!-- RIGHT CONTETN -->
 				<div id="mRight_content"></div>

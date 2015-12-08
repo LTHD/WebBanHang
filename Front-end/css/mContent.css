@@ -1,0 +1,48 @@
+#mContent{
+	width: 1155px;
+	height: auto;
+	float: left;
+}
+
+/*=========================================*/
+#mLeft_content{
+	width: 175px;
+	height: auto;
+	float: left;
+	display: block;
+}
+
+#diskfilm.active a{
+	text-align: center;
+	background-color: #BD3846;
+}
+
+#diskmusic.active a{
+	text-align: center;
+	background-color: #FF6F64;
+}
+#diskDVD.active a{
+	text-align: center;
+	background-color: #CC9933;
+}
+#mLeft_content  .nav{
+	padding-left: 0;
+	padding-top: 20px;
+	width: 170px;
+	font-size: 17px;
+	
+}
+/*=========================================*/
+
+
+
+
+
+
+
+
+
+
+
+
+
