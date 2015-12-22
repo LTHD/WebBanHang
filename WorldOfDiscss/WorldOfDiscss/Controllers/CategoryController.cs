@@ -10,6 +10,7 @@ using log4net;
 
 namespace WorldOfDiscs.Controllers
 {
+	
     public class CategoryController : Controller
     {
         //cấu hình ghi log 

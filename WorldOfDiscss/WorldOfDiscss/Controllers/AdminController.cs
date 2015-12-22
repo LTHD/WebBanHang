@@ -93,7 +93,45 @@ namespace WorldOfDiscs.Controllers
             return View(lstuser.ToPagedList(pageNumber, pageSize));
         }
 
-        
+        public ActionResult ManagingDiscCategories(int? page)
+        {
+            if (Session["LogedUserID"] == null)
+            {
+                return RedirectToAction("Login", "Admin");
+            }
+            List<Category> lstcategory = db.Categories.ToList();
+            //Số đĩa trên trang
+            int pageSize = 10;
+            //Số trang
+            int pageNumber = (page ?? 1);
+            return View(lstcategory.ToPagedList(pageNumber, pageSize));
+        }
+
+        public ActionResult ManagingDiscDetails(int? page)
+        {
+            if (Session["LogedUserID"] == null)
+            {
+                return RedirectToAction("Login", "Admin");
+            }
+            List<Disc> lstdisc = db.Discs.ToList();
+            //Số đĩa trên trang
+            int pageSize = 10;
+            //Số trang
+            int pageNumber = (page ?? 1);
+            return View(lstdisc.ToPagedList(pageNumber, pageSize));
+        }
+
+        public ActionResult ManagingFeedback()
+        {
+            if (Session["LogedUserID"] == null)
+            {
+                return RedirectToAction("Login", "Admin");
+            }
+            List<Feedback> lstfeedback = db.Feedbacks.OrderByDescending(n=>n.Id).ToList();
+            List<ReplyFeedback> lstrefeed = db.ReplyFeedbacks.ToList();
+            ViewData["lstrefeed"] = lstrefeed;
+            return View(lstfeedback);
+        }
 
         public ActionResult ManagingOrder(int? page)
         {
