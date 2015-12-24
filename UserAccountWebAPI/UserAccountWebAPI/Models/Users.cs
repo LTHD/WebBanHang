@@ -68,7 +68,7 @@ namespace UserAccountWebAPI.Models
 
         public int updateAccount(Users user)
         {
-            Users acc = findAccount(user.Email, user.Password);
+            Users acc = getUser(user.Id);
             if (acc != null)
             {
                 acc.FullName = user.FullName;
@@ -80,7 +80,6 @@ namespace UserAccountWebAPI.Models
                 acc.Sex = user.Sex;
                 acc.Password = user.Password;
                 acc.isAdmin = user.isAdmin;
-                _Users.Add(acc);
                 return Save();
             }
             return 0;
