@@ -7,6 +7,7 @@ using WorldOfDiscs.Models;
 using PagedList;
 using PagedList.Mvc;
 using log4net;
+using System.Threading.Tasks;
 
 namespace WorldOfDiscs.Controllers
 {
@@ -119,6 +120,21 @@ namespace WorldOfDiscs.Controllers
             //Số trang
             int pageNumber = (page ?? 1);
             return View(lstdisc.ToPagedList(pageNumber, pageSize));
+        }
+
+        public ActionResult UpdateOnline()
+        {
+            List<Disc> disc = Global.DiscHelper.Feed();
+            foreach (var d in disc)
+                db.Discs.Add(d);
+            try
+            {
+                db.SaveChanges();
+            }
+            catch (Exception ex){}
+            List<Disc> lstdisc = db.Discs.ToList();
+            int page = lstdisc.Count / 11 + 1;
+            return View("ManagingDiscDetails", lstdisc.ToPagedList(10, page));
         }
 
         public ActionResult ManagingFeedback()

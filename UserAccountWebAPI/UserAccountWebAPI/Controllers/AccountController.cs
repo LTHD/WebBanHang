@@ -20,6 +20,27 @@ namespace UserAccountWebAPI.Controllers
         }
 
         [HttpPost]
+        [Route("api/account/getaccount")]
+        public IHttpActionResult getAccount([FromBody]int Id)
+        {
+            Users result = Global.Data.UsersDB.getUser(Id);
+            if(result != null)
+                return Ok(result);
+            return BadRequest();
+        }
+
+        [HttpPost]
+        [Route("api/account/getaccountbyemail")]
+        public IHttpActionResult getAccount([FromBody]string Email)
+        {
+            Users result = Global.Data.UsersDB.getUserByEmail(Email);
+            if (result != null)
+                return Ok(result);
+            return BadRequest();
+        }
+
+
+        [HttpPost]
         [Route("api/account/login")]
         public IHttpActionResult checkLogin([FromBody]Users user)
         {
@@ -31,7 +52,7 @@ namespace UserAccountWebAPI.Controllers
 
 
         [HttpPost]
-        [Route("api/account/add")]
+        [Route("api/account/register")]
         public IHttpActionResult addAccount([FromBody]Users user)
         {
             int result = Global.Data.UsersDB.addAccount(user);
@@ -53,9 +74,9 @@ namespace UserAccountWebAPI.Controllers
 
         [HttpDelete]
         [Route("api/account/delete")]
-        public IHttpActionResult deleteAccount([FromBody]Users user)
+        public IHttpActionResult deleteAccount([FromUri]int id)
         {
-            int result = Global.Data.UsersDB.deleteAccount(user);
+            int result = Global.Data.UsersDB.deleteAccount(id);
             if (result > 0)
                 return Ok();
             return BadRequest();

@@ -68,7 +68,7 @@ namespace UserAccountWebAPI.Models
 
         public int updateAccount(Users user)
         {
-            Users acc = findAccount(user.Email, user.Password);
+            Users acc = getUser(user.Id);
             if (acc != null)
             {
                 acc.FullName = user.FullName;
@@ -85,11 +85,11 @@ namespace UserAccountWebAPI.Models
             return 0;
         }
 
-        public int deleteAccount(Users user)
+        public int deleteAccount(int id)
         {
             foreach (Users acc in _Users)
             {
-                if (acc.Email == user.Email)
+                if (acc.Id == id)
                 {
                     _Users.Remove(acc);
                 }
@@ -119,6 +119,22 @@ namespace UserAccountWebAPI.Models
             {
                 return 0;
             }
+        }
+
+        public Users getUser(int id)
+        {
+            foreach (Users user in _Users)
+            {
+                if (user.Id == id)
+                    return user;
+            }
+            return null;
+        }
+
+        public Users getUserByEmail(string Email)
+        {
+            Users user = _Users.Where(acc => acc.Email == Email).FirstOrDefault();
+            return user;
         }
     }
 }
