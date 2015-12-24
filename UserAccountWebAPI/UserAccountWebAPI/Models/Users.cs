@@ -80,16 +80,17 @@ namespace UserAccountWebAPI.Models
                 acc.Sex = user.Sex;
                 acc.Password = user.Password;
                 acc.isAdmin = user.isAdmin;
+                _Users.Add(acc);
                 return Save();
             }
             return 0;
         }
 
-        public int deleteAccount(Users user)
+        public int deleteAccount(int id)
         {
             foreach (Users acc in _Users)
             {
-                if (acc.Email == user.Email)
+                if (acc.Id == id)
                 {
                     _Users.Remove(acc);
                 }
@@ -119,6 +120,22 @@ namespace UserAccountWebAPI.Models
             {
                 return 0;
             }
+        }
+
+        public Users getUser(int id)
+        {
+            foreach (Users user in _Users)
+            {
+                if (user.Id == id)
+                    return user;
+            }
+            return null;
+        }
+
+        public Users getUserByEmail(string Email)
+        {
+            Users user = _Users.Where(acc => acc.Email == Email).FirstOrDefault();
+            return user;
         }
     }
 }
